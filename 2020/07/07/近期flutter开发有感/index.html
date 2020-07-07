@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>近期flutter开发有感</title>
+  <meta name="author" content="Jason Wang">
+  <meta name="description" content="&amp;emsp;&amp;emsp;期末考试全部结束之后，我就开始了flutter的开发。在这个我得个人博客中，我并不想说很多的太过于技术性的东西，毕竟我写代码过程中的资料来源于网络上的博客，文档等资料，那些技术上的文档，我无意再复述一遍。所以，在本篇文章中，我来说一下近期我开发的一些感受吧。&amp;emsp;&amp;em">
+  
+  
+  <meta property="og:title" content="近期flutter开发有感"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Jason Wang的博客"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Jason Wang的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  <div class="description">
+    &nbsp;
+  </div>
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        近期flutter开发有感
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2020-07-07T02:08:23.000Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2020-07-07
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      
+    
+    <div class="picture-container">
+      
+    </div>
+    <p>&emsp;&emsp;期末考试全部结束之后，我就开始了flutter的开发。在这个我得个人博客中，我并不想说很多的太过于技术性的东西，毕竟我写代码过程中的资料来源于网络上的博客，文档等资料，那些技术上的文档，我无意再复述一遍。所以，在本篇文章中，我来说一下近期我开发的一些感受吧。<br>&emsp;&emsp;刚刚接触flutter开发，我并没有学习Dart语言，因为学习语言很耗费时间，并且和实际的开发脱节。因此，我只花费了两个小时的时间，简单的熟悉了Dart，发现和Java是类似的。于是，我不再执着于Dart语言的学习，开始了flutter的开发。<br>&emsp;&emsp;首先，我配置了flutter的环境。我使用的是压缩包解压后，使用命令行安装的方式。安装之后，我的电脑上本身就有Android Studio，所以，我将这个软件作为flutter的开发工具。在这个软件上安装flutter和Dart插件，之后就可以直接在该软件中创建flutter项目。<br>&emsp;&emsp;接下来，根据flutter的开发文档，我在flutter中，实现了底部任务栏的切换。这个在开发文档中有详细的说明，比较简单。接下来，就是首页和新页面的连接。这个耗费了我一定时间，这才把多页面这个事情弄明白。之后，在软件中，实现了加载网页的功能。这个因为网上有相关的内容，所以比较简单。之后，就是创建本地航概题库的功能。本地题库，确实是一个浩大的工程。在实际开发中，先假设所有的题都是一样的，那么，我们的开发就会相对简单，具体的题目后期会修改。题库的开发，比较耗费时间，需要判断正误，还有判断正确率。其中，还有按钮功能和颜色的切换。这些，都不是容易的事情，都是自己一点一点摸索的。<br>&emsp;&emsp;接下来，就是跳转到微信公众号的功能。这个功能无法实现，因为微信的种种限制。我们尝试网页跳转，schema跳转，SDK跳转等方式，但是都无法实现功能。微信，是一个闭环的生态，其实它很封闭。微信自己的网页，只能够在微信自己的浏览器中才能打开。<br>&emsp;&emsp;接下来，是主题的设置。本来，想要在设置里面写主题切换，但是因为setState((){})这个函数无法在static的函数中使用，我们不得不在首页使用。又因为appBar中的iconbutton无法实现下部弹出菜单，我们只能一次点击切换一个主题，而不能在菜单中选择。<br>&emsp;&emsp;从几天的flutter的开发来看，flutter在界面开发上，确实比传统的Android开发更加简单。传统的Android布局，需要对于组件的位置有很多的设置。但是flutter的开发确实让组件的开发变得更加简单。通过添加依赖的方式，使得flutter具有了很多的功能。flutter具有的跨平台的特性，让安卓和iOS应用能够一次开发，多端生成应用。flutter也可开发web端，未来，flutter还可以开发桌面端应用，真正实现开发全平台应用。我比较看好flutter的未来。</p>
+
+
+  </article>
+  </script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+        <style>
+        .vcard .vimg{left:0;}
+        </style>
+        <div id="vcomment" class="vcomment" style="padding:0 6% 0 7%;"></div>
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+        <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '.vcomment',
+                notify: notify,
+                verify: verify,
+                appId: "",
+                appKey: "",
+                placeholder: "Just go go",
+                pageSize:'10',
+                avatar:'mm',
+                lang:'zh-cn'
+            })
+        </script>
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        
+    </div>
+    <div class="secondrow">
+        <a href="">
+        
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
