@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="" />
   
-  <title>crazy os(1) Bochs for Windows的安装和初步使用</title>
+  <title>crazy os(1): Bochs的初步使用</title>
   <meta name="author" content="Jason Wang">
   <meta name="description" content="#步骤如下：
 1.安装Bochs这一个步骤无需多言。安装时建议全部勾选，即全部安装。
@@ -16,7 +16,7 @@
 1234567891011121314me">
   
   
-  <meta property="og:title" content="crazy os(1) Bochs for Windows的安装和初步使用"/>
+  <meta property="og:title" content="crazy os(1): Bochs的初步使用"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="Jason Wang的博客"/>
   <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
@@ -47,14 +47,14 @@
       
   
     <h1 class="page-title center">
-        crazy os(1) Bochs for Windows的安装和初步使用
+        crazy os(1): Bochs的初步使用
     </h1>
   
 
 
     </div>
     <div class="meta center">
-      <time datetime="2020-07-19T09:26:14.000Z" itemprop="datePublished">
+      <time datetime="2020-07-19T15:04:03.000Z" itemprop="datePublished">
   <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
@@ -77,14 +77,14 @@
     </div>
     <p>#步骤如下：</p>
 <h2 id="1-安装Bochs"><a href="#1-安装Bochs" class="headerlink" title="1.安装Bochs"></a>1.安装Bochs</h2><p>这一个步骤无需多言。安装时建议全部勾选，即全部安装。</p>
-<h2 id="2-创建虚拟机映像img文件"><a href="#2-创建虚拟机映像img文件" class="headerlink" title="2.创建虚拟机映像img文件"></a>2.创建虚拟机映像img文件</h2><p>打开Bochs的安装目录，双击bximage.exe文件，如下图所示：<br><img src="images/crazyos01/01.png" alt="双击之后弹出的命令行" title="双击之后弹出的命令行"><br>然后，分别输入以下内容：<br><img src="images/crazyos01/10.png" alt="输入命令" title="输入命令"></p>
+<h2 id="2-创建虚拟机映像img文件"><a href="#2-创建虚拟机映像img文件" class="headerlink" title="2.创建虚拟机映像img文件"></a>2.创建虚拟机映像img文件</h2><p>打开Bochs的安装目录，双击bximage.exe文件，如下图所示：<br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/01.png" alt="双击之后弹出的命令行" title="双击之后弹出的命令行"><br>然后，分别输入以下内容：<br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/10.png" alt="输入命令" title="输入命令"></p>
 <h2 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3.配置文件"></a>3.配置文件</h2><p>新建bochsrc文件，内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">megs:32</span><br><span class="line"></span><br><span class="line">romimage:file&#x3D;$BXSHARE&#x2F;BIOS-bochs-latest</span><br><span class="line">vgaromimage:file&#x3D;$BXSHARE&#x2F;VGABIOS-lgpl-latest</span><br><span class="line"></span><br><span class="line">floppya:1_44&#x3D;a.img,status&#x3D;inserted</span><br><span class="line"></span><br><span class="line">boot:floppy</span><br><span class="line"></span><br><span class="line">log:bochsout.txt</span><br><span class="line"></span><br><span class="line">mouse:enabled&#x3D;0</span><br><span class="line"></span><br><span class="line">keyboard: keymap&#x3D;$BXSHARE&#x2F;keymaps&#x2F;x11-pc-de.map</span><br></pre></td></tr></table></figure>
 <h2 id="4-生成bin文件"><a href="#4-生成bin文件" class="headerlink" title="4.生成bin文件"></a>4.生成bin文件</h2><p>首先，将boot.asm文件使用nasm编译成boot.bin文件:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nasm boot.asm -o boot.bin</span><br></pre></td></tr></table></figure>
 <p>之后，使用dd.exe在该文件所在文件夹的命令行（即命令行中跳转到这个文件夹的位置）下输入命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if&#x3D;boot.bin of&#x3D;a.img bs&#x3D;512 count&#x3D;1 conv&#x3D;notrunc</span><br></pre></td></tr></table></figure>
-<h2 id="5-运行虚拟机"><a href="#5-运行虚拟机" class="headerlink" title="5.运行虚拟机"></a>5.运行虚拟机</h2><p>首先在Bochs的安装目录中创建一个文件夹，其中有bin文件,img文件，还有，bochsrc文件：<br><img src="images/crazyos01/03.png" alt="新建的文件夹中的内容" title="新建的文件夹的内容"><br><img src="images/crazyos01/04.png" alt="安装目录中的内容" title="安装目录中的内容"><br>之后，进入新建的文件夹，输入如下所示的命令：<br><img src="images/crazyos01/06.png" alt="输入命令之后的结果" title="输入命令之后的结果"><br>选择Disk &amp; Boot，之后点击左侧的edit，之后会自动选择选择刚刚新建的文件夹之中的img文件，并将Boot Option的选项卡中的第一个启动项设为floopy（软盘），点击OK，然后点击start，具体如下图：<br><img src="images/crazyos01/08.png" alt="选择" title="选择"><br><img src="images/crazyos01/09.png" alt="启动效果" title="启动效果"><br>然后就开始启动了，启动效果如图所示：<br><img src="images/crazyos01/07.png" alt="启动效果" title="启动效果"></p>
+<h2 id="5-运行虚拟机"><a href="#5-运行虚拟机" class="headerlink" title="5.运行虚拟机"></a>5.运行虚拟机</h2><p>首先在Bochs的安装目录中创建一个文件夹，其中有bin文件,img文件，还有，bochsrc文件：<br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/03.png" alt="新建的文件夹中的内容" title="新建的文件夹的内容"><br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/04.png" alt="安装目录中的内容" title="安装目录中的内容"><br>之后，进入新建的文件夹，输入如下所示的命令：<br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/06.png" alt="输入命令之后的结果" title="输入命令之后的结果"><br>选择Disk &amp; Boot，之后点击左侧的edit，之后会自动选择选择刚刚新建的文件夹之中的img文件，并将Boot Option的选项卡中的第一个启动项设为floopy（软盘），点击OK，然后点击start，具体如下图：<br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/08.png" alt="选择" title="选择"><br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/09.png" alt="启动效果" title="启动效果"><br>然后就开始启动了，启动效果如图所示：<br><img src="/2020/07/19/crazy-os-1-Bochs%E7%9A%84%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8/07.png" alt="启动效果" title="启动效果"></p>
 <p>以上内容仅供参考，具体的细节需要自己操作。</p>
 
 
